@@ -3,7 +3,7 @@ import { Task } from './TaskManager';
 
 interface TaskFormProps {
   task?: Task | null;
-  onSave: (taskData: Omit<Task, 'id' | 'createdAt'>) => void;
+  onSave: ((taskData: Omit<Task, 'id' | 'createdAt'>) => void) | ((taskData: Task) => void);
   onCancel: () => void;
 }
 
@@ -26,13 +26,25 @@ const TaskForm: React.FC<TaskFormProps> = ({ task, onSave, onCancel }) => {
     e.preventDefault();
     if (title.trim() === '') return;
 
-    onSave({
+    const taskData = {
       title: title.trim(),
       category,
       priority,
       dueDate: dueDate || undefined,
       completed: task?.completed || false
-    });
+    };
+
+    if (task) {
+      // When editing, include the existing task's id and createdAt
+      (onSave as (taskData: Task) => void)({
+        ...taskData,
+        id: task.id,
+        createdAt: task.createdAt
+      });
+    } else {
+      // When adding new task, don't include id and createdAt
+      (onSave as (taskData: Omit<Task, 'id' | 'createdAt'>) => void)(taskData);
+    }
   };
 
   const categories = ['Work', 'Personal', 'Shopping', 'Health', 'Education', 'Other'];
