@@ -1,0 +1,251 @@
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #121212;
+  color: #ffffff;
+  line-height: 1.6;
+}
+
+.App {
+  min-height: 100vh;
+  padding: 20px 0;
+}
+
+/* Card Styles */
+.card-custom {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(170, 0, 255, 0.2);
+  border-radius: 15px;
+  padding: 2rem;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.card-custom:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(170, 0, 255, 0.2);
+  border-color: rgba(170, 0, 255, 0.4);
+}
+
+/* Button Styles */
+.btn-custom {
+  background: linear-gradient(45deg, #aa00ff, #ff00aa);
+  border: none;
+  color: white;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn-custom:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(170, 0, 255, 0.4);
+  color: white;
+}
+
+.btn-outline-light {
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.btn-outline-light:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: rgba(170, 0, 255, 0.5);
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* Task Manager Specific Styles */
+.task-manager-container {
+  padding: 1rem;
+}
+
+.task-item {
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.task-item:hover {
+  transform: translateX(5px);
+  box-shadow: 0 4px 20px rgba(170, 0, 255, 0.3);
+}
+
+.task-item.completed {
+  opacity: 0.7;
+}
+
+/* Form Styles */
+.form-control,
+.form-select {
+  background-color: rgba(255, 255, 255, 0.05) !important;
+  border: 1px solid rgba(170, 0, 255, 0.3) !important;
+  color: white !important;
+}
+
+.form-control:focus,
+.form-select:focus {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+  border-color: #aa00ff !important;
+  box-shadow: 0 0 0 0.2rem rgba(170, 0, 255, 0.25) !important;
+  color: white !important;
+}
+
+.form-control::placeholder {
+  color: rgba(255, 255, 255, 0.5) !important;
+}
+
+/* Modal Styles */
+.modal-overlay {
+  backdrop-filter: blur(5px);
+}
+
+.modal-content {
+  border: 1px solid rgba(170, 0, 255, 0.3);
+}
+
+/* Progress Bar */
+.progress {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  border-radius: 10px;
+  transition: width 0.3s ease;
+}
+
+/* Alert Styles */
+.alert {
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+}
+
+.alert-danger {
+  border-color: rgba(220, 53, 69, 0.5);
+  color: #ff6b6b;
+}
+
+.alert-warning {
+  border-color: rgba(255, 193, 7, 0.5);
+  color: #ffd93d;
+}
+
+/* Checkbox Styles */
+.form-check-input {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(170, 0, 255, 0.3);
+  transition: all 0.3s ease;
+}
+
+.form-check-input:checked {
+  background-color: #aa00ff;
+  border-color: #aa00ff;
+}
+
+.form-check-input:focus {
+  box-shadow: 0 0 0 0.2rem rgba(170, 0, 255, 0.25);
+}
+
+/* Badge Styles */
+.badge {
+  font-weight: 500;
+  padding: 0.4em 0.6em;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.fade-in {
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.slide-in {
+  animation: slideIn 0.5s ease-out;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .card-custom {
+    padding: 1.5rem;
+  }
+
+  .display-4 {
+    font-size: 2.5rem;
+  }
+
+  .btn-lg {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .task-item {
+    padding: 1rem;
+  }
+
+  .task-stats .row {
+    margin: 0 -0.5rem;
+  }
+
+  .task-stats .col-6 {
+    padding: 0 0.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .d-flex.justify-content-center.gap-2 {
+    flex-direction: column;
+    gap: 0.5rem !important;
+  }
+
+  .btn-lg {
+    width: 100%;
+  }
+
+  .task-item .d-flex {
+    flex-direction: column;
+    align-items: flex-start !important;
+  }
+
+  .task-item .d-flex > div:last-child {
+    margin-top: 1rem;
+    width: 100%;
+    justify-content: flex-end;
+  }
+}
