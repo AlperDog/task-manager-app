@@ -25,22 +25,6 @@ A modern, feature-rich task management application built with React and TypeScri
 - **Bootstrap 5** - Responsive UI components
 - **LocalStorage** - Data persistence
 - **CSS3** - Custom styling and animations
-- **GitHub Pages** - Automated deployment
-
-## 📱 Screenshots
-
-### Desktop View
-
-- Clean, organized task list
-- Category and priority indicators
-- Due date visualizations
-- Search and filter controls
-
-### Mobile View
-
-- Touch-friendly interface
-- Responsive layout
-- Optimized for small screens
 
 ## 🚀 Getting Started
 
@@ -208,23 +192,12 @@ Easy to extend with:
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
 ## 👨‍💻 Author
 
 **Alper Doğramacı**
 
 - GitHub: [@AlperDog](https://github.com/AlperDog)
 - Portfolio: [https://alperdog.github.io/portfolio](https://alperdog.github.io/portfolio)
-
-## 🙏 Acknowledgments
-
-- React team for the amazing framework
-- Bootstrap for the responsive UI components
-- GitHub Pages for free hosting
-- The open-source community for inspiration
 
 ---
 
